@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local configuration
+.env
+*.env
+configs/*.local
+
+# Credentials
+*key*
+*token*
+*secret*
+
+# Logs and outputs
+*.log
+runs/
+outputs/
+results/
+checkpoints/
+*.pt
+*.pth
+*.pkl
+*.pickle
+*.png
+*.jpg
+*.pdf
+
+# Editors
+.DS_Store
+.vscode/
+.idea/
