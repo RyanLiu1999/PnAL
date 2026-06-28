@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this implementation, please cite the corresponding PnAL paper."
+title: "Confidence-Calibrated Action-Level Multi-Source Decision Fusion for Safety-Critical Multi-Agent Systems"
+authors:
+  - family-names: Liu
+    given-names: Ke
+  - family-names: Ma
+    given-names: Jing
+  - family-names: Lai
+    given-names: Edmund M-K
+preferred-citation:
+  type: article
+  title: "Confidence-Calibrated Action-Level Multi-Source Decision Fusion for Safety-Critical Multi-Agent Systems"
+  authors:
+    - family-names: Liu
+      given-names: Ke
+    - family-names: Ma
+      given-names: Jing
+    - family-names: Lai
+      given-names: Edmund M-K
+  journal: "Information Fusion"
+  year: 2026
