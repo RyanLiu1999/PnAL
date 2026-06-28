@@ -19,6 +19,8 @@ This repository contains implementation code for the reported PnAL algorithm.
 
 It does **not** provide additional experimental claims, supplementary experiments, additional figures, trajectory case studies, calibration-curve results, runtime-analysis claims, or extra robustness results beyond the manuscript.
 
+The related manuscript has not been published yet. The repository therefore avoids journal, volume, issue, page, DOI, or formal article-citation claims.
+
 ## Repository structure
 
 ```text
@@ -47,7 +49,7 @@ PnAL-GitHub/
 A Python environment with PyTorch and `highway-env` is required.
 
 ```bash
-git clone https://github.com/<your-user-or-org>/PnAL.git
+git clone https://github.com/RyanLiu1999/PnAL.git
 cd PnAL
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
@@ -83,17 +85,19 @@ src/pnal/pnal_algorithm.py
 
 ## Citation
 
-If this implementation supports your work, please cite the corresponding paper.
+The related manuscript is currently unpublished. Until a formal paper citation is available, please cite this repository:
 
 ```bibtex
-@article{pnal2026,
-  title   = {Confidence-Calibrated Action-Level Multi-Source Decision Fusion for Safety-Critical Multi-Agent Systems},
-  author  = {Liu, Ke and Ma, Jing and Lai, Edmund M-K},
-  journal = {Information Fusion},
-  year    = {2026},
-  note    = {Manuscript under review}
+@misc{pnal_software_2026,
+  title  = {PnAL: Implementation code for Confidence-Calibrated Action-Level Multi-Source Decision Fusion},
+  author = {Liu, Ke and Ma, Jing and Lai, Edmund M-K},
+  year   = {2026},
+  note   = {Unpublished manuscript and software repository},
+  url    = {https://github.com/RyanLiu1999/PnAL}
 }
 ```
+
+A formal article citation will be added after publication.
 
 ## Code availability statement
 
