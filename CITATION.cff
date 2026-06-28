@@ -1,6 +1,7 @@
 cff-version: 1.2.0
-message: "If you use this implementation, please cite the corresponding PnAL paper."
-title: "Confidence-Calibrated Action-Level Multi-Source Decision Fusion for Safety-Critical Multi-Agent Systems"
+message: "The related manuscript has not been published. Please cite this software repository until a formal paper citation is available."
+title: "PnAL: Implementation code for Confidence-Calibrated Action-Level Multi-Source Decision Fusion"
+type: software
 authors:
   - family-names: Liu
     given-names: Ke
@@ -8,15 +9,5 @@ authors:
     given-names: Jing
   - family-names: Lai
     given-names: Edmund M-K
-preferred-citation:
-  type: article
-  title: "Confidence-Calibrated Action-Level Multi-Source Decision Fusion for Safety-Critical Multi-Agent Systems"
-  authors:
-    - family-names: Liu
-      given-names: Ke
-    - family-names: Ma
-      given-names: Jing
-    - family-names: Lai
-      given-names: Edmund M-K
-  journal: "Information Fusion"
-  year: 2026
+version: "0.1.0"
+repository-code: "https://github.com/RyanLiu1999/PnAL"
