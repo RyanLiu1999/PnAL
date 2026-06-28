@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pnal"
+version = "0.1.0"
+description = "Implementation code for PnAL: confidence-calibrated action-level multi-source decision fusion."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  {name = "Ke Liu"},
+  {name = "Jing Ma"},
+  {name = "Edmund M-K Lai"}
+]
+license = {text = "MIT"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
