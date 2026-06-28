@@ -1,0 +1,10 @@
+gymnasium
+highway-env
+numpy
+torch
+matplotlib
+pandas
+scikit-learn
+scipy
+aiohttp
+openai
