@@ -1,0 +1,16 @@
+testbed,agents,condition,success_mean_pct,collision_mean_pct,reported_seed_count,result_source
+Intersection,4,full_pnal,62.8,28.7,3,manuscript
+Intersection,4,no_semantic,63.2,28.5,3,supplement
+Intersection,4,no_shield,52.2,47.8,3,supplement
+Intersection,4,no_coordination,27.5,71,3,manuscript
+Intersection,4,no_fusion,19.5,80.5,3,manuscript
+Roundabout,2,full_pnal,85.7,10.7,3,manuscript
+Roundabout,2,no_semantic,77.5,12.5,3,supplement
+Roundabout,2,no_shield,73.8,22.2,3,supplement
+Roundabout,2,no_coordination,85,11.2,3,supplement
+Roundabout,2,no_fusion,70.8,24.5,3,supplement
+Roundabout,4,full_pnal,63.8,28.8,3,manuscript
+Roundabout,4,no_semantic,41.3,44.3,3,supplement
+Roundabout,4,no_shield,45,49.5,3,latest_three_seed_log
+Roundabout,4,no_coordination,58.5,35.3,3,manuscript
+Roundabout,4,no_fusion,23.7,71.7,3,manuscript

@@ -1,24 +1,10 @@
-"""Example entry point for the PnAL implementation.
+"""Run the reported evaluation-time PnAL supplement using saved experiment runs.
 
-Run from the repository root:
-
-    python examples/run_pnal.py
+Mount /content/drive/MyDrive in Colab and choose SHARD in
+src/pnal/pnal_algorithm.py before launching.
 """
-
 from pathlib import Path
-import sys
+import runpy
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "src"
-sys.path.insert(0, str(SRC))
-
-from pnal import pnal_algorithm  # noqa: F401
-
-
-if __name__ == "__main__":
-    # The uploaded implementation includes its own main entry point in
-    # src/pnal/pnal_algorithm.py. Running that file directly starts the
-    # training/evaluation routine implemented by the authors.
-    print("PnAL package import succeeded.")
-    print("To run the full implementation:")
-    print("python src/pnal/pnal_algorithm.py")
+runpy.run_path(str(ROOT / "src" / "pnal" / "pnal_algorithm.py"), run_name="__main__")

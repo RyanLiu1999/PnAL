@@ -1,0 +1,5 @@
+testbed,agents,p_vs_cs_maddpg,p_vs_hqmix,p_vs_ippo,p_vs_mappo
+Roundabout,2,3.8e-11,1.2e-7,0.0013,0.0000025
+Roundabout,4,3.4e-16,1.5e-7,0.000023,1.3e-9
+Highway,2,1.3e-17,0.0046,7.9e-43,5.2e-61
+Highway,4,5.4e-7,0.00011,5.1e-90,6.1e-110

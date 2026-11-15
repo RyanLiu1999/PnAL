@@ -1,0 +1,13 @@
+testbed,agents,method,success_mean_pct,collision_mean_pct,timeout_mean_pct,return_mean
+Intersection,4,PnAL,62.8,28.7,8.5,8.56
+Intersection,4,IPPO,51.2,48.8,0,6.05
+Intersection,4,IPPO+Shield,45.2,53.5,1.3,5.11
+Intersection,4,IPPO+Full,62.8,30.5,6.7,8.46
+Roundabout,2,PnAL,85.7,10.7,0,1.64
+Roundabout,2,IPPO,75.2,17.3,0,1.55
+Roundabout,2,IPPO+Shield,83,10.3,0.2,1.64
+Roundabout,2,IPPO+Full,86.8,9.7,0,1.66
+Roundabout,4,PnAL,63.8,28.8,0.8,1.38
+Roundabout,4,IPPO,49.8,40.5,0,1.33
+Roundabout,4,IPPO+Shield,58.3,30.3,0.7,1.4
+Roundabout,4,IPPO+Full,64.7,29,0.8,1.39

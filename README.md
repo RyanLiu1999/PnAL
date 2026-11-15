@@ -1,108 +1,41 @@
 # PnAL: Confidence-Calibrated Action-Level Multi-Source Decision Fusion
 
-This repository provides implementation code for **PnAL**, a confidence-calibrated action-level multi-source decision fusion framework for safety-critical multi-agent systems.
+Research implementation accompanying the manuscript **Confidence-Calibrated Action-Level Multi-Source Decision Fusion for Safety-Critical Multi-Agent Systems**.
 
-PnAL generates executable fused actions by combining:
+The implementation includes learned action proposals, an offline semantic-template library, Platt-calibrated semantic admission, neuro-fuzzy state-risk assessment, action-dependent feasibility screening, priority-based multi-agent coordination, and PathNet/SAC training-side modules. The supplied entry point performs evaluation-time supplementary experiments using saved experimental runs.
 
-- a learned decision source that proposes actions from local observations;
-- an offline semantic-prior source that retrieves cached action-prior preferences;
-- calibrated confidence gating for semantic-prior admission;
-- a neuro-fuzzy risk source for risk-constrained filtering;
-- priority-based local coordination for residual conflict arbitration;
-- an auxiliary training-side adaptation interface for improving the learned decision source.
+## Layout
 
-The implementation uses controlled multi-agent interaction testbeds as evaluation environments. These environments are provided as representative safety-critical interaction scenarios; the repository is organized around the reported algorithm rather than application-specific claims.
+- `src/pnal/pnal_algorithm.py`: PnAL implementation and evaluation-time experiment runner.
+- `data/paper/main_comparisons.csv`: Table 3 and Table 4 values from the corrected manuscript.
+- `data/paper/controlled_pathways.csv`: matched IPPO and PnAL online-pathway comparisons.
+- `data/paper/frozen_component_ablations.csv`: execution-time component comparisons.
+- `data/paper/collision_mcnemar.csv`: reported paired collision tests.
+- `data/paper/run_protocol_map.csv`: provenance map for the eight PnAL main settings.
+- `docs/experiment_protocol.md`: configuration, evaluation procedure, and result provenance.
+- `tools/check_paper_tables.py`: lightweight table and source integrity checks.
 
-## Repository scope
+## Setup
 
-This repository contains implementation code for the reported PnAL algorithm.
-
-It does **not** provide additional experimental claims, supplementary experiments, additional figures, trajectory case studies, calibration-curve results, runtime-analysis claims, or extra robustness results beyond the manuscript.
-
-The related manuscript has not been published yet. The repository therefore avoids journal, volume, issue, page, DOI, or formal article-citation claims.
-
-## Repository structure
-
-```text
-PnAL-GitHub/
-├── README.md
-├── requirements.txt
-├── pyproject.toml
-├── LICENSE
-├── CITATION.cff
-├── SECURITY.md
-├── .gitignore
-├── configs/
-│   └── example.env
-├── docs/
-│   └── code_availability.md
-├── examples/
-│   └── run_pnal.py
-└── src/
-    └── pnal/
-        ├── __init__.py
-        └── pnal_algorithm.py
-```
-
-## Installation
-
-A Python environment with PyTorch and `highway-env` is required.
+Python 3.11+ is recommended. The reported supplementary environment used `highway-env==1.10.1` and `gymnasium==1.4.0`.
 
 ```bash
-git clone https://github.com/RyanLiu1999/PnAL.git
-cd PnAL
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+python tools/check_paper_tables.py
 ```
 
-## Optional offline semantic-template generation
+### Evaluation with saved model artifacts
 
-The semantic-prior component can use offline language assistance during template construction or update. Online execution should rely on cached templates, symbolic context matching, cached action-prior retrieval, and calibrated confidence checking.
-
-API keys must be supplied through environment variables and must never be committed to the repository.
+The supplied runner reads existing trained runs and their evaluation records; it does not retrain models. In Google Colab, mount Drive and place the original run directories under `/content/drive/MyDrive`. Choose `SHARD = "A"`, `"B"`, `"C"`, `"all"`, or `"summary"` at the beginning of `src/pnal/pnal_algorithm.py`, then run:
 
 ```bash
-cp configs/example.env .env
-# edit .env locally
-export DEEPSEEK_API_KEY="your_api_key_here"
-export DEEPSEEK_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
+python src/pnal/pnal_algorithm.py
 ```
 
-The code also supports fallback templates when no API key is provided.
+The selected model checkpoints are kept with the original experiment runs and are not included in this repository. The CSV files contain the supplied manuscript-level aggregate results. They are not presented as independently regenerated episode-level observations.
 
-## Running the implementation
-
-```bash
-python examples/run_pnal.py
-```
-
-The main algorithm implementation is located at:
-
-```text
-src/pnal/pnal_algorithm.py
-```
+See [experiment protocol](docs/experiment_protocol.md) for the exact configuration map and analysis definitions.
 
 ## Citation
 
-The related manuscript is currently unpublished. Until a formal paper citation is available, please cite this repository:
-
-```bibtex
-@misc{pnal_software_2026,
-  title  = {PnAL: Implementation code for Confidence-Calibrated Action-Level Multi-Source Decision Fusion},
-  author = {Liu, Ke and Ma, Jing and Lai, Edmund M-K},
-  year   = {2026},
-  note   = {Unpublished manuscript and software repository},
-  url    = {https://github.com/RyanLiu1999/PnAL}
-}
-```
-
-A formal article citation will be added after publication.
-
-## Code availability statement
-
-The repository provides implementation code for the reported PnAL algorithm. All experimental claims are based on the results reported in the manuscript.
-
-## Security notice
-
-Do not commit credentials, API keys, tokens, `.env` files, or local experiment outputs. Use environment variables for optional offline language-assisted template construction.
+The related manuscript is under review. Cite this software repository until a published paper citation becomes available.

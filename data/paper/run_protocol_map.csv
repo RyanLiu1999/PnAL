@@ -1,0 +1,9 @@
+testbed,agents,method,delta_temp_rule,saved_run_group,seeds
+Intersection,2,PnAL,none,table3_intersection,3
+Intersection,3,PnAL,none,table3_intersection,3
+Intersection,4,PnAL,paper_max,pnal_results_v1_archived,3
+Intersection,5,PnAL,none,table3_intersection,3
+Roundabout,2,PnAL,paper_max,table4,3
+Roundabout,4,PnAL,paper_max,table4,3
+Highway,2,PnAL,paper_max,table4,3
+Highway,4,PnAL,paper_max,table4,3
