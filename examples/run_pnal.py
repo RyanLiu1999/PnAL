@@ -1,10 +1,17 @@
-"""Run the reported evaluation-time PnAL supplement using saved experiment runs.
+"""Launch the PnAL evaluation runner using previously saved experiment runs.
 
-Mount /content/drive/MyDrive in Colab and choose SHARD in
-src/pnal/pnal_algorithm.py before launching.
+Mount Google Drive in Colab, install the project dependencies and select SHARD
+at the beginning of src/pnal/pnal_algorithm.py before running this entry point.
 """
 from pathlib import Path
-import runpy
+import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-runpy.run_path(str(ROOT / "src" / "pnal" / "pnal_algorithm.py"), run_name="__main__")
+
+if __name__ == "__main__":
+    subprocess.run(
+        [sys.executable, str(ROOT / "src" / "pnal" / "pnal_algorithm.py")],
+        cwd=ROOT,
+        check=True,
+    )

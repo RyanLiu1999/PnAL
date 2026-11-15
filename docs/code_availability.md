@@ -1,7 +1,16 @@
 # Code availability
 
-This repository provides implementation code for the reported PnAL algorithm.
+The PnAL implementation and supplementary evaluation runner are available in
+`src/pnal/pnal_algorithm.py`. The released manuscript-level results are
+organized under `data/paper/`, with testbed protocols and source-run mapping
+documented in `docs/experiment_protocol.md`.
 
-The repository is intended for algorithm implementation and reproducibility of the reported method. It does not contain supplementary experimental claims, extra robustness studies, additional figures, trajectory case studies, calibration-curve results, or runtime-analysis claims beyond the manuscript.
+The program loads author-generated checkpoints, semantic calibration files,
+and saved evaluation records from the configured run directories. Those trained
+checkpoint artifacts remain with the original research runs. The publication
+tables can be inspected independently from those artifacts.
 
-Optional offline language-assisted semantic-template construction uses environment variables for credentials and should not rely on hard-coded API keys.
+The source contains the calibrated semantic gate, neuro-fuzzy risk screening,
+SafetyShield, conflict coordination, model definitions, and evaluation-time
+ablation definitions. Optional offline semantic-template services read
+credentials from environment variables.
